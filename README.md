@@ -555,6 +555,11 @@ Examples:
   - If the commit starts with "doc", group the commit as "Documentation" and set the default scope to "other". (e.g. `docs: xyz` will be processed as `docs(other): xyz`)
 - `{ message = "(www)", scope = "Application"}`
   - If the commit contains "(www)", override the scope with "Application". Scoping order is: scope specification, conventional commit's scope and default scope.
+
+***Tip for ordering the groups in your changelog in a controlled way:*** [Here is a solution which should work fine for the moment](https://github.com/orhun/git-cliff/issues/9#issuecomment-914513569) - Basically add comments like `<!-- 0 -->` to your group names and they'll be sorted alphabetically by the content of the comments. 
+
+[This post](https://github.com/orhun/git-cliff/issues/9#issuecomment-1051254202) in the same thread then explains how you can filter the HTML comments from the markdown output after the groups have been sorted.
+
 #### filter_commits
 
 If set to `true`, commits that are not matched by [commit parsers](#commit_parsers) are filtered out.
